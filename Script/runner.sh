@@ -24,9 +24,9 @@ if [[ $1 == "Darwin" ]]; then
     $BugsScrcpy_Bin/app/BugsScrcpy -s $2 --tunnel-host=$4 --tunnel-port=27185
 fi
 if [[ $1 == "MSYS" ]]; then
-    set BugsAdb_Bin=%currPath%/bin/BugsAdb
-    set BugsScrcpy_Bin=%currPath%/bin/BugsScrcpy
-    set PATH="%PATH%:%BugsAdb_Bin%:%BugsScrcpy_Bin%"
+    set BugsAdb_Bin=$currPath/bin/BugsAdb
+    set BugsScrcpy_Bin=$currPath/bin/BugsScrcpy
+    set PATH="$PATH:$BugsAdb_Bin:$BugsScrcpy_Bin"
     set token=$3
     set ADB_SERVER_SOCKET=tcp:$4:5038
     echo PATH
