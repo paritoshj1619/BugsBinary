@@ -8,7 +8,6 @@ if [[ $1 == "Linux" ]]; then
         rm -r bin.zip
     fi
 elif [[ $1 == "MSYS" ]]; then
-    echo "here"
     if [ ! -d "$DIR" ]; then
         powershell -command "Invoke-WebRequest -Uri https://github.com/paritoshj1619/BugsBinary/raw/master/Windows/bin.zip -OutFile bin.zip"
         powershell -command "Expand-Archive bin.zip"
