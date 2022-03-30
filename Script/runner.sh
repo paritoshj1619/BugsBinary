@@ -30,5 +30,5 @@ if [[ $1 == "MSYS" ]]; then
     set token=$3
     set ADB_SERVER_SOCKET=tcp:$4:5038
     echo PATH
-    $BugsScrcpy_Binx/app/BugsScrcpy -s $2 --tunnel-host=$4 --tunnel-port=27185
+    $BugsScrcpy_Bin/app/BugsScrcpy -s $2 --tunnel-host=$4 --tunnel-port=27185
 fi
