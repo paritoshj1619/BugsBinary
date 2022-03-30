@@ -7,14 +7,14 @@ if [[ $1 == "Linux" ]]; then
         unzip bin.zip
         rm -r bin.zip
     fi
-elif [[ $2 == "MSYS" ]]; then
+elif [[ $1 == "MSYS" ]]; then
     echo "here"
     if [ ! -d "$DIR" ]; then
         powershell -command "Invoke-WebRequest -Uri https://github.com/paritoshj1619/BugsBinary/raw/master/Windows/bin.zip -OutFile bin.zip"
-        7z.exe bin bin.zip
-        rm -r bin.zip
+        powershell -command "Expand-Archive bin.zip ./bin"
+        powershell -command "rm -r bin.zip"
     fi
-elif [[ $3 == "Darwin" ]]; then
+elif [[ $1 == "Darwin" ]]; then
     if [ ! -d "$DIR" ]; then
         wget "https://github.com/paritoshj1619/BugsBinary/raw/master/MacOSx/bin.zip"
         unzip bin.zip
