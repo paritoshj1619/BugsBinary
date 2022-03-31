@@ -12,6 +12,7 @@ if [[ $1 == "Linux" ]]; then
     export BugsScrcpy_Bin=$(pwd)/bin/BugsScrcpy
     export PATH="$PATH:$BugsAdb_Bin:$BugsScrcpy_Bin"     
     export token=$3
+    export SCRCPY_SERVER_PATH="$BugsScrcpy_Bin/server/scrcpy-server"
     export ADB_SERVER_SOCKET=tcp:$4:5038
     $BugsScrcpy_Bin/app/BugsScrcpy -s $2 --tunnel-host=$4 --tunnel-port=27185
 fi
@@ -20,12 +21,13 @@ if [[ $1 == "Darwin" ]]; then
     export BugsScrcpy_Bin=$currPath/bin/BugsScrcpy
     export PATH="$PATH:$BugsAdb_Bin:$BugsScrcpy_Bin"
     export token=$3
+    export SCRCPY_SERVER_PATH="$BugsScrcpy_Bin/server/scrcpy-server"
     export ADB_SERVER_SOCKET=tcp:$4:5038
     $BugsScrcpy_Bin/app/BugsScrcpy -s $2 --tunnel-host=$4 --tunnel-port=27185
 fi
 if [[ $1 == "MSYS" ]]; then
-    export BugsAdb_Bin=$currPath/bin/BugsAdb
-    export BugsScrcpy_Bin=$currPath/bin/BugsScrcpy
+    export BugsAdb_Bin=$currPath/bin/bin/BugsAdb
+    export BugsScrcpy_Bin=$currPath/bin/bin/BugsScrcpy
     export PATH="$PATH:$BugsAdb_Bin:$BugsScrcpy_Bin"
     export token=$3
     export ADB_SERVER_SOCKET=tcp:$4:5038
