@@ -15,7 +15,7 @@ elif [[ $1 == "MSYS" ]]; then
     fi
 elif [[ $1 == "Darwin" ]]; then
     if [ ! -d "$DIR" ]; then
-        wget "https://github.com/paritoshj1619/BugsBinary/raw/master/MacOSx/bin.zip"
+        curl -OL "https://github.com/paritoshj1619/BugsBinary/raw/master/MacOs/bin.zip"
         unzip bin.zip
         rm -r bin.zip
     fi
